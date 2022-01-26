@@ -3,16 +3,20 @@
 namespace WSUniversalLib
 {
     [TestClass]
-    public class Calculation
+    public class CalculationTests
     {
         [TestMethod]
-        public int GetQuantityForProduct(int productType,
-                                         int materialType,
-                                         int count,
-                                         float width,
-                                         float length)
+        public void GetQuantityForProduct_ValidParams_ReturnsInteger()
         {
-            return default;
+            // Arrange.
+            Calculation calculation = new Calculation();
+            int expected = 114148;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(3, 1, 15, 20, 45);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
         }
     }
 }
