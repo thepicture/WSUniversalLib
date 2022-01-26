@@ -12,6 +12,18 @@ namespace WSUniversalLib
                                          float width,
                                          float length)
         {
+            if (count <= 0)
+            {
+                return -1;
+            }
+            if (width <= 0)
+            {
+                return -1;
+            }
+            if (length <= 0)
+            {
+                return -1;
+            }
             float area = width * length;
             double productTypeFactor;
             double materialDefectPercent;
