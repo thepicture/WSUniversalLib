@@ -5,11 +5,12 @@ namespace WSUniversalLib
     [TestClass]
     public class CalculationTests
     {
+        private static readonly Calculation calculation = new Calculation();
+
         [TestMethod]
         public void GetQuantityForProduct_ValidParams_ReturnsInteger()
         {
             // Arrange.
-            Calculation calculation = new Calculation();
             int expected = 114148;
 
             // Act.
