@@ -7,6 +7,8 @@ namespace WSUniversalLib
     {
         private static readonly Calculation calculation = new Calculation();
 
+        #region Easy tests
+
         [TestMethod]
         public void GetQuantityForProduct_ValidParamsEasy_ReturnsInteger()
         {
@@ -99,7 +101,7 @@ namespace WSUniversalLib
         }
 
         [TestMethod]
-        public void GetQuantityForProduct_ZeroWidth_ReturnsNegativeOne()
+        public void GetQuantityForProduct_ZeroWidthEasy_ReturnsNegativeOne()
         {
             // Arrange.
             int expected = -1;
@@ -112,7 +114,7 @@ namespace WSUniversalLib
         }
 
         [TestMethod]
-        public void GetQuantityForProduct_ZeroLength_ReturnsNegativeOne()
+        public void GetQuantityForProduct_ZeroLengthEasy_ReturnsNegativeOne()
         {
             // Arrange.
             int expected = -1;
@@ -124,7 +126,7 @@ namespace WSUniversalLib
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void GetQuantityForProduct_ZeroCount_ReturnsNegativeOne()
+        public void GetQuantityForProduct_ZeroCountEasy_ReturnsNegativeOne()
         {
             // Arrange.
             int expected = -1;
@@ -136,5 +138,6 @@ namespace WSUniversalLib
             Assert.AreEqual(expected, actual);
         }
 
+        #endregion
     }
 }
