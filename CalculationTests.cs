@@ -139,5 +139,68 @@ namespace WSUniversalLib
         }
 
         #endregion
+        #region Hard tests
+
+        [TestMethod]
+        public void GetQuantityForProduct_MetissaWidth_Returns1018()
+        {
+            int expected = 1018;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(1, 1, 1, 20.5f, 45);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetQuantityForProduct_MetissaLength_Returns115416()
+        {
+            int expected = 115416;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(3, 1, 15, 20, 45.5f);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetQuantityForProduct_MetissaWidthAndLength_Returns118302()
+        {
+            int expected = 118302;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(3, 1, 15, 20.5f, 45.5f);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetQuantityForProduct_MetissaWidthAndLengthAndBigNumbers_ReturnsNegativeOne()
+        {
+            int expected = -1;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(3, 2, 34534515, 23453450.5f, 452345235.5f);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetQuantityForProduct_BigNumbers_ReturnsNegativeOne()
+        {
+            int expected = -1;
+
+            // Act.
+            int actual = calculation.GetQuantityForProduct(3, 2, 123456, 2345343345450, 452345235);
+
+            // Assert.
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
     }
 }

@@ -56,6 +56,11 @@ namespace WSUniversalLib
             double howMuchIsNeedToAdd = 1 - materialDefectPercent;
             double countOfQualityRawMaterial = rawCountOfQualityRawMaterial / howMuchIsNeedToAdd;
 
+            if (countOfQualityRawMaterial > int.MaxValue)
+            {
+                return -1;
+            }
+
             return (int)Math.Ceiling(countOfQualityRawMaterial);
         }
     }
